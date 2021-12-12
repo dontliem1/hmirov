@@ -16,9 +16,6 @@
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 
   <meta name="color-scheme" content="dark">
@@ -100,9 +97,19 @@
     </section>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <button type="button" onclick="askPermission();">тык</button>
   <script>
     const scene = document.getElementById('top');
-    if (typeof DeviceMotionEvent.requestPermission === "function") {
+    function askPermission() {
+      if (typeof DeviceOrientationEvent === 'undefined' || !DeviceOrientationEvent.requestPermission) {
+        const parallaxInstance = new Parallax(scene, {
+          selector: '.header__title_shadow',
+          scalarX: 1,
+          scalary: 1,
+        });
+        return;
+      }
+      if (typeof DeviceOrientationEvent.requestPermission === "function") {
       DeviceOrientationEvent.requestPermission()
         .then(response => {
           if (response === "granted") {
@@ -113,13 +120,8 @@
             });
           }
         });
-    } else {
-      const parallaxInstance = new Parallax(scene, {
-        selector: '.header__title_shadow',
-        scalarX: 1,
-        scalary: 1,
-      });
     }
+  }
   </script>
 </body>
 

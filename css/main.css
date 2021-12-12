@@ -2,7 +2,7 @@ html {
   accent-color: #EE4B22;
 }
 body {
-  font-family: 'Noto Serif Display', serif;
+  font-family: system-ui, sans-serif;
   margin: 0;
 }
 .container {
@@ -45,7 +45,6 @@ img, iframe {
   letter-spacing: .1em;
   font-size: 1.5em;
   /*text-shadow: .1em .05em #FA9E0B, .2em .1em #EE4B22;*/
-  font-family: system-ui, sans-serif;
 }
 .header__title:not(.header__title_shadow) {
   z-index: 1;
