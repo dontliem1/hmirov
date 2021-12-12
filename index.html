@@ -26,8 +26,10 @@
 
 <body>
   <header class="header">
-    <div class="container">
-      <h1 class="header__title" id="top">Хмыров</h1>
+    <div class="container" style="position: relative" id="top">
+      <p class="header__title header__title_shadow" data-selector=".header__title_shadow"  data-depth="0.9">Хмыров</p>
+      <p class="header__title header__title_shadow"  data-selector=".header__title_shadow"  data-depth="0.5">Хмыров</p>
+      <h1 class="header__title">Хмыров</h1>
       <nav class="header__nav">
         <a class="header__link" href="#">Музыка</a>
         <a class="header__link" href="#">Клипы</a>
@@ -97,7 +99,15 @@
       </div>
     </section>
   </main>
-  <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <script>
+    const scene = document.getElementById('top');
+    const parallaxInstance = new Parallax(scene, {
+      selector: '.header__title_shadow',
+      scalarX: 1,
+      scalary: 1,
+    });
+  </script>
 </body>
 
 </html>

@@ -1,0 +1,1 @@
+{"version":3,"sources":["js/main.js"],"names":["scene","document","getElementById","parallaxInstance","Parallax"],"mappings":";AAAA,IAAMA,EAAQC,SAASC,eAAe,OAChCC,EAAmB,IAAIC,SAASJ","file":"main.bf586b90.js","sourceRoot":"..","sourcesContent":["const scene = document.getElementById('top');\nconst parallaxInstance = new Parallax(scene);\n"]}

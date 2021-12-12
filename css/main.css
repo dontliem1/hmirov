@@ -44,8 +44,21 @@ img, iframe {
   text-transform: uppercase;
   letter-spacing: .1em;
   font-size: 1.5em;
-  text-shadow: .1em .05em #FA9E0B, .2em .1em #EE4B22;
+  /*text-shadow: .1em .05em #FA9E0B, .2em .1em #EE4B22;*/
   font-family: system-ui, sans-serif;
+}
+.header__title:not(.header__title_shadow) {
+  z-index: 1;
+}
+.header__title_shadow {
+  color: #FA9E0B;
+  position: absolute !important;
+  font-weight: bold;
+  left: 1rem !important;
+  top: 1.25rem !important;
+}
+.header__title_shadow:first-child {
+  color: #EE4B22;
 }
 .header__link {
   color: inherit;
